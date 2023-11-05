@@ -1,6 +1,6 @@
-GOARCH = amd64
+GOARCH = $(shell go env GOARCH)
 UNAME = $(shell uname -s)
-OS = linux
+OS = $(shell go env GOOS)
 ifndef OS
 	ifeq ($(UNAME), Linux)
 		OS = linux

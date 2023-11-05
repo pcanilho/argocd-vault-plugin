@@ -132,6 +132,7 @@ func (b *backend) getArgoProjectClient(ctx context.Context, storage logical.Stor
 	}
 
 	argoClient, err := apiclient.NewClient(&apiclient.ClientOptions{
+		Insecure:   true,
 		ServerAddr: argoConfig.ServerAddress,
 		UserAgent:  "Vault ArgoCD Plugin",
 		AuthToken:  argoConfig.AuthToken,
